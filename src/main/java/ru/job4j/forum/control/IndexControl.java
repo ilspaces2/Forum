@@ -3,14 +3,14 @@ package ru.job4j.forum.control;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import ru.job4j.forum.service.PostService;
+import ru.job4j.forum.service.PostRepositoryService;
 
 @Controller
 public class IndexControl {
 
-    private PostService postService;
+    private PostRepositoryService postService;
 
-    public IndexControl(PostService postService) {
+    public IndexControl(PostRepositoryService postService) {
         this.postService = postService;
     }
 

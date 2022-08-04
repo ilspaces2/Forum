@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import ru.job4j.forum.model.Post;
-import ru.job4j.forum.service.PostService;
+import ru.job4j.forum.service.PostRepositoryService;
 
 @Controller
 public class PostControl {
 
-    private PostService postService;
+    private PostRepositoryService postService;
 
-    public PostControl(PostService postService) {
+    public PostControl(PostRepositoryService postService) {
         this.postService = postService;
     }
 
