@@ -15,6 +15,24 @@
 </head>
 <body>
 <div class="container mt-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Hi, ${user.username}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="nav">
+                <c:if test="${user.username.equals(post.username)}">
+                    <a class="nav-link" href="<c:url value='/toUpdate?idPost=${post.id}'/>">Обновить</a>
+                </c:if>
+                <a class="nav-link" href="<c:url value='/index'/>">Назад</a>
+                <a class="nav-link" href="<c:url value='/logout'/>">Выход</a>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="container mt-3">
     <div class="row">
         <h4>Форум job4j</h4>
     </div>
@@ -24,8 +42,6 @@
     <div class="row">
         <h6>Описание: <c:out value="${post.description}"/></h6>
     </div>
-    <a class="btn btn-primary" href="<c:url value='/toUpdate?idPost=${post.id}'/>">Обновить</a>
-    <a class="btn btn-primary" href="<c:url value='/index'/>">Назад</a>
 </div>
 
 <!-- Optional JavaScript -->

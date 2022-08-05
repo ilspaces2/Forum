@@ -20,7 +20,6 @@ public class PostRepositoryService {
     }
 
     public void update(Post post) {
-
         store.save(post);
     }
 

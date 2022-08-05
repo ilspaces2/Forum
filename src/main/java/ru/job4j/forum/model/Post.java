@@ -14,6 +14,7 @@ public class Post {
     private String description;
     @Column(insertable = false, updatable = false)
     private Calendar created;
+    private String username;
 
     public Post() {
     }
@@ -48,6 +49,14 @@ public class Post {
 
     public void setCreated(Calendar created) {
         this.created = created;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     @Override

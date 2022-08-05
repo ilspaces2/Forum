@@ -15,6 +15,21 @@
 </head>
 <body>
 <div class="container mt-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Hi, ${user.username}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="nav">
+                <a class="nav-link" href="<c:url value='/toSave'/>">Добавить пост</a>
+                <a class="nav-link" href="<c:url value='/logout'/>">Выход</a>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="container mt-3">
     <div class="row">
         <h4>Форум job4j</h4>
     </div>
@@ -24,6 +39,7 @@
             <tr>
                 <th scope="col">Тема</th>
                 <th scope="col">Дата добавления</th>
+                <th scope="col">Автор</th>
             </tr>
             </thead>
             <tbody>
@@ -33,11 +49,11 @@
                         <a href="<c:url value='/toPost?idPost=${post.id}'/>">${post.name}</a>
                     </td>
                     <td><c:out value="${post.created.time}"/></td>
+                    <td><c:out value="${post.username}"/></td>
                 </tr>
             </c:forEach>
             </tbody>
         </table>
-        <a class="btn btn-primary" href="<c:url value='/toSave'/>">Добавить пост</a>
     </div>
 </div>
 
